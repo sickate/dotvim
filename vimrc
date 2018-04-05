@@ -10,6 +10,7 @@ Plug 'powerline/powerline'
 
 Plug 'wincent/Command-T'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'milkypostman/vim-togglelist'
 
 Plug 'nathanaelkane/vim-indent-guides'
 
