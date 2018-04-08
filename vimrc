@@ -8,7 +8,7 @@ Plug 'gregsexton/gitv'
 
 Plug 'powerline/powerline'
 
-Plug 'wincent/Command-T'
+"Plug 'wincent/Command-T'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'milkypostman/vim-togglelist'
 
@@ -96,6 +96,7 @@ call plug#end()
 if executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
+
 
 " General {{{
 let mapleader = ","
@@ -324,6 +325,6 @@ nnoremap <leader>gb :Gblame<CR>
 " Togglelist {{{
 nnoremap <script> <silent> <leader>fw :call ToggleQuickfixList()<CR>
 nnoremap <script> <silent> <leader>fl :call ToggleLocationList()<CR>
+nnoremap <leader>t :TagbarToggle<CR>
 "}}}
-
 
