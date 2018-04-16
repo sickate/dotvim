@@ -32,7 +32,7 @@ Plug 'w0rp/ale'
 Plug 'junegunn/vim-github-dashboard'
 
 " jedi only in python, uncomment later if need it
-" Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'ervandew/supertab'
@@ -328,3 +328,6 @@ nnoremap <script> <silent> <leader>fl :call ToggleLocationList()<CR>
 nnoremap <leader>t :TagbarToggle<CR>
 "}}}
 
+"let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_python_binary_path = '/usr/local/bin/python3'
+let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
