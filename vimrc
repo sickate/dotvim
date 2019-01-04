@@ -20,6 +20,7 @@ Plug 'fatih/vim-go'
 Plug 'derekwyatt/vim-scala'
 Plug 'pangloss/vim-javascript'
 Plug 'motus/pig.vim'
+Plug 'tell-k/vim-autopep8'
 
 " Commenter
 Plug 'sickate/nerdcommenter'
@@ -36,9 +37,12 @@ Plug 'davidhalter/jedi-vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'ervandew/supertab'
+Plug 'ambv/black'
 
-" ultisnips requires python, vim-snippets uses VimL
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+" ultisnips requires python
+Plug 'SirVer/ultisnips'
+" vim-snippets has many templates
+Plug 'honza/vim-snippets'
 
 " On-demand loading
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
@@ -83,6 +87,8 @@ Plug 'sjl/vitality.vim' " iterm2 focus get/lost event listener
 " Plug 'Shougo/denite.nvim'
 " tab switching
 " kien/tabman.vim
+"
+Plug 'chr4/nginx.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -331,3 +337,20 @@ nnoremap <leader>t :TagbarToggle<CR>
 "let g:ycm_path_to_python_interpreter = '/usr/local/bin/python3'
 let g:ycm_python_binary_path = '/usr/local/bin/python3'
 let g:ycm_server_python_interpreter = '/usr/local/bin/python3'
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+
+"set g:tagbar_ctags_bin='/usr/local/bin/ctags'
+"
+"
+
+au BufNewFile *.py 0r /Users/tzhu/.vim/templates/python_header.template
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
