@@ -21,6 +21,7 @@ Plug 'derekwyatt/vim-scala'
 Plug 'pangloss/vim-javascript'
 Plug 'motus/pig.vim'
 Plug 'tell-k/vim-autopep8'
+Plug 'heavenshell/vim-pydocstring'
 
 " Commenter
 Plug 'sickate/nerdcommenter'
@@ -285,6 +286,8 @@ nnoremap <C-]> g<C-]>
 
 nnoremap <Leader>fn :cn<CR>
 nnoremap <Leader>fp :cp<CR>
+
+nnoremap <silent> <leader>tt :Pydocstring<CR>
 "}}}
 
 " Colorscheme {{{1
@@ -344,6 +347,7 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 "
 
 au BufNewFile *.py 0r /Users/tzhu/.vim/templates/python_header.template
+au BufRead *.py setlocal softtabstop=4
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
